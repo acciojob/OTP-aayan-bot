@@ -7,7 +7,7 @@ fields.forEach((field,index)=>{
 	}
 	})
 	field.addEventListener("keydown",(e)=>{
-		if(e.key==="Backspace" && field.value.length===0 && index>=0){
+		if(e.key==="Backspace" && field.value.length===0 && index>0){
 			fields[index-1].focus();
 		}
 	})
