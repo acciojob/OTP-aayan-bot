@@ -1,6 +1,6 @@
 const codes = document.querySelectorAll('.code');
 
-// Automatically focus the first input on page load
+// Focus the first input on load
 codes[0].focus();
 
 codes.forEach((code, idx) => {
@@ -13,11 +13,12 @@ codes.forEach((code, idx) => {
                 }
             }, 10);
         } else if (e.key === 'Backspace') {
-            setTimeout(() => {
-                if (idx > 0) {
+            codes[idx].value = '';
+            if (idx > 0) {
+                setTimeout(() => {
                     codes[idx - 1].focus();
-                }
-            }, 10);
+                }, 10);
+            }
         }
     });
 });
